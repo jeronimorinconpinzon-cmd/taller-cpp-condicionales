@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int main (){
+
+double celcius;
+double farenheit = (celcius*9/5)+32;
+double kelvin = celcius+273,15;
+double Rankine (celcius*9/5)+491,67; 
+ cout << "Por favor ingresa la temperatura que esta haciendo en grados celcius en este momento";
+ cin >> celcius;
+ cout << fixed << setprecision(2);
+ cout << "Fahrenheit: " << fahrenheit << "\n";
+ cout << "Kelvin: " << kelvin << "\n";
+ cout << "Rankine: " << rankine << "\n";
+
+return 0;
+}
