@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int a = 10, b = 5;
+
+    cout << "Valores iniciales: a = " << a << ", b = " << b << "\n\n";
+
+    // (a) Con variable temporal
+    {
+        int x = a, y = b;
+        int temp = x;
+        x = y;
+        y = temp;
+
+        cout << "Metodo 1 (Variable temporal):\n";
+        cout << "a = " << x << ", b = " << y << "\n\n";
+    }
+
+    // (b) Con operaciones aritméticas
+    {
+        int x = a, y = b;
+        x = x + y;
+        y = x - y;
+        x = x - y;
+
+        cout << "Metodo 2 (Operaciones aritmeticas):\n";
+        cout << "a = " << x << ", b = " << y << "\n\n";
+    }
+
+    // (c) Con XOR
+    {
+        int x = a, y = b;
+        x = x ^ y;
+        y = x ^ y;
+        x = x ^ y;
+
+        cout << "Metodo 3 (XOR):\n";
+        cout << "a = " << x << ", b = " << y << "\n";
+    }
+
+    return 0;
+}
