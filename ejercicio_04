@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double num1, num2;
+    char op;
+
+    cout << "Ingrese numero 1: ";
+    cin >> num1;
+    cout << "Ingrese operador (+, -, *, /, %): ";
+    cin >> op;
+    cout << "Ingrese numero 2: ";
+    cin >> num2;
+
+    switch(op) {
+        case '+':
+            cout << "Resultado: " << num1 + num2;
+            break;
+        case '-':
+            cout << "Resultado: " << num1 - num2;
+            break;
+        case '*':
+            cout << "Resultado: " << num1 * num2;
+            break;
+        case '/':
+            if (num2 != 0)
+                cout << "Resultado: " << num1 / num2;
+            else
+                cout << "Error: Division por cero";
+            break;
+        case '%':
+            if (num2 != 0)
+                cout << "Resultado: " << fmod(num1, num2);
+            else
+                cout << "Error: Modulo por cero";
+            break;
+        default:
+            cout << "Operador no valido";
+    }
+
+    return 0;
+}
