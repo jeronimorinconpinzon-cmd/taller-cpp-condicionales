@@ -1,0 +1,51 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+
+    double monto;
+    char tipoCliente;
+    char cupon;
+    bool finSemana;
+
+    cout << "Ingrese monto de compra: ";
+    cin >> monto;
+
+    cout << "Tipo de cliente (V = VIP, N = Normal): ";
+    cin >> tipoCliente;
+
+    cout << "Codigo de cupon (A, B, C, X = ninguno): ";
+    cin >> cupon;
+
+    cout << "Es fin de semana? (1 = Si, 0 = No): ";
+    cin >> finSemana;
+
+    double descuento = 0;
+
+    if (tipoCliente == 'V')
+        descuento += 0.15;
+
+    if (monto > 500)
+        descuento += 0.10;
+
+    // Cupón
+    switch(cupon) {
+        case 'A': descuento += 0.05; break;
+        case 'B': descuento += 0.10; break;
+        case 'C': descuento += 0.15; break;
+        default: break;
+    }
+
+    if (finSemana)
+        descuento += 0.05;
+
+    descuento = min(descuento, 0.50);
+
+    double precioFinal = monto * (1 - descuento);
+
+    cout << "Descuento total: " << descuento * 100 << "%\n";
+    cout << "Precio final: $" << precioFinal << endl;
+
+    return 0;
+}
