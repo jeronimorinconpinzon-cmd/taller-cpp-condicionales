@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 int main() {
 
     const int LEER = 0b001;
