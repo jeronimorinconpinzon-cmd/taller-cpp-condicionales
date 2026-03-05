@@ -7,7 +7,6 @@ int main() {
 
     cout << "Valores iniciales: a = " << a << ", b = " << b << "\n\n";
 
-    // (a) Con variable temporal
     {
         int x = a, y = b;
         int temp = x;
@@ -18,7 +17,6 @@ int main() {
         cout << "a = " << x << ", b = " << y << "\n\n";
     }
 
-    // (b) Con operaciones aritméticas
     {
         int x = a, y = b;
         x = x + y;
@@ -29,7 +27,6 @@ int main() {
         cout << "a = " << x << ", b = " << y << "\n\n";
     }
 
-    // (c) Con XOR
     {
         int x = a, y = b;
         x = x ^ y;
