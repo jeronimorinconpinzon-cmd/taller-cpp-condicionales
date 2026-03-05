@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    double saldo = 1000.0;
+    int opcion;
+    int transacciones = 0;
+
+    cout << "Saldo inicial: $" << saldo << endl;
+    cout << "1. Depositar\n2. Retirar\n3. Consultar\n";
+    cout << "Seleccione una opcion: ";
+    cin >> opcion;
+
+    switch(opcion) {
+        case 1: {
+            double monto;
+            cout << "Monto a depositar: ";
+            cin >> monto;
+            saldo += monto;
+            transacciones++;
+            break;
+        }
+        case 2: {
+            double monto;
+            cout << "Monto a retirar: ";
+            cin >> monto;
+            if (monto <= saldo) {
+                saldo -= monto;
+                transacciones++;
+            } else {
+                cout << "Fondos insuficientes\n";
+            }
+            break;
+        }
+        case 3:
+            cout << "Saldo actual: $" << saldo << endl;
+            transacciones++;
+            break;
+        default:
+            cout << "Opcion invalida\n";
+    }
+
+    cout << "Saldo final: $" << saldo << endl;
+    cout << "Numero de transacciones: " << transacciones << endl;
+
+    return 0;
+}
