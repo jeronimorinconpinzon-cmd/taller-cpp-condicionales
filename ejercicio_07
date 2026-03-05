@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int anio;
+    cout << "Ingrese un anio: ";
+    cin >> anio;
+
+    bool divisible4 = (anio % 4 == 0);
+    bool divisible100 = (anio % 100 == 0);
+    bool divisible400 = (anio % 400 == 0);
+
+    cout << "\nRazonamiento:\n";
+
+    if (divisible4)
+        cout << "Es divisible por 4\n";
+    else
+        cout << "No es divisible por 4\n";
+
+    if (divisible100)
+        cout << "Es divisible por 100\n";
+    else
+        cout << "No es divisible por 100\n";
+
+    if (divisible400)
+        cout << "Es divisible por 400\n";
+    else
+        cout << "No es divisible por 400\n";
+
+    bool bisiesto = (divisible4 && !divisible100) || divisible400;
+
+    if (bisiesto)
+        cout << "\nEs un anio bisiesto\n";
+    else
+        cout << "\nNo es un anio bisiesto\n";
+
+    return 0;
+}
