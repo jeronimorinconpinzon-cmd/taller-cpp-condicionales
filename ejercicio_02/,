@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double a, b, c;
+
+    cout << "Ingrese los tres lados del triangulo: ";
+    cin >> a >> b >> c;
+
+    if (a + b > c && a + c > b && b + c > a) {
+
+        if (a == b && b == c)
+            cout << "Es un triangulo equilatero" << "\n";
+        else if (a == b || a == c || b == c)
+            cout << "Es un triangulo isosceles" << "\n";
+        else
+            cout << "Es un triangulo escaleno" << "\n";
+
+        double a2 = (a*a), b2 = (b*b), c2 = (c*c);
+        if (a2 + b2 == c2 || a2 + c2 == b2 || b2 + c2 == a2)
+            cout << "Es rectangulo" << "\n";
+        else if (a2 + b2 > c2 && a2 + c2 > b2 && b2 + c2 > a2)
+            cout << "Es acutangulo" << "\n";
+        else
+            cout << "Es obtusangulo" << "\n";
+
+    } else {
+        cout << "No forman un triangulo valido";
+    }
+
+    return 0;
+}
